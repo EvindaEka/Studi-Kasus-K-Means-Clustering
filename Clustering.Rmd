@@ -25,6 +25,7 @@ summary(data)
 #4. Menampilkan boxplot masing-masing atribut 
 boxplot(data) 
 ``` 
+
 ```{r} 
 #5a. Penetapan dan Visualisasi Jumlah CLuster yang optimal dengan Elbow 
 fviz_nbclust(data, kmeans, method ="wss") 
@@ -56,17 +57,5 @@ fviz_cluster(Clustering, geom = "point", data = data)
 #8. Menyimpan hasil cluster 
 #final=data.frame(data, Clustering$cluster) 
 #View(final) 
-#write.csv(final, file = "c:/tugas_sdt/Final_Cluster.csv", row.names = TRUE) 
+#write.csv(final, file = "Final_Cluster.csv", row.names = TRUE) 
 ``` 
-
-
-
-
-
-
-
-
-
-
-
-
