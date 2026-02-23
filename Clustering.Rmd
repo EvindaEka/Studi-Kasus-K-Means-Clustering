@@ -1,0 +1,72 @@
+---
+title: Clustering KMeans
+---
+
+
+```{r} 
+#K Mean Clustering 
+#1. Aktifkan library 
+library(factoextra) 
+library(ggplot2) 
+```
+
+```{r} 
+#2. Membaca dataset 
+data=read.csv("D:/KULIAH/SEMESTER 2/PEMODELAN STATISTIK TERAPAN/Tugas minggu 3/Data-Clustering.csv", header=TRUE)
+data 
+``` 
+
+```{r} 
+#3. Menampilkan summary 
+summary(data) 
+``` 
+
+```{r} 
+#4. Menampilkan boxplot masing-masing atribut 
+boxplot(data) 
+``` 
+```{r} 
+#5a. Penetapan dan Visualisasi Jumlah CLuster yang optimal dengan Elbow 
+fviz_nbclust(data, kmeans, method ="wss") 
+``` 
+
+```{r}
+#5b. Penetapan dan Visualisasi Jumlah Cluster yang optimal dengan Silhouette 
+fviz_nbclust(data, kmeans, method = "silhouette") 
+``` 
+
+```{r} 
+#6a. Mencoba Klaster=2 
+Clustering=kmeans(data,centers=2,nstart=25) 
+Clustering 
+``` 
+
+```{r} 
+#6b. Mencoba Klaster=3 
+# Clustering=kmeans(data,centers=3,nstart=25) 
+# Clustering
+``` 
+
+```{r} 
+#7. Visualisasi Cluster 
+fviz_cluster(Clustering, geom = "point", data = data) 
+``` 
+
+```{r} 
+#8. Menyimpan hasil cluster 
+#final=data.frame(data, Clustering$cluster) 
+#View(final) 
+#write.csv(final, file = "c:/tugas_sdt/Final_Cluster.csv", row.names = TRUE) 
+``` 
+
+
+
+
+
+
+
+
+
+
+
+
